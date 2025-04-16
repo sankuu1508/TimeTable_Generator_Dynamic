@@ -1,0 +1,17 @@
+﻿@model TimeTableGeneratorDynamic.Models.TimeTableInputModel
+
+<h2>Enter Time Table Configuration</h2>
+<form asp-action="SubmitInput" method="post">
+    <label>Working Days (1-7):</label>
+    <input asp-for="WorkingDays" type="number" min="1" max="7" required /><br />
+
+    <label>Subjects per Day (max 8):</label>
+    <input asp-for="SubjectsPerDay" type="number" min="1" max="8" required /><br />
+
+    <label>Total Subjects:</label>
+    <input asp-for="TotalSubjects" type="number" min="1" required /><br />
+
+    <p><strong>Total Hours (auto):</strong> @Model.TotalHours</p>
+
+    <button type="submit">Submit</button>
+</form>

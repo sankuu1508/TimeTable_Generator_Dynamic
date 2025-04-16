@@ -1,0 +1,13 @@
+﻿<h2>Enter Subject Hours</h2>
+<form asp-action="Generate" method="post">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div>
+            <label>Subject Name:</label>
+            <input name="[@i].SubjectName" required />
+            <label>Hours:</label>
+            <input name="[@i].Hours" type="number" min="1" required />
+        </div>
+    }
+    <button type="submit">Generate</button>
+</form>
